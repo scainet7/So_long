@@ -18,7 +18,7 @@ char	*ft_check_map(t_game *game)
 	char	*map_string;
 	int		fd;
 
-	map_string = ft_strdup_gnl("");
+	map_string = ft_gnl_strdup("");
 	fd = open(game->map_name, O_RDONLY);
 	if (fd < 0)
 	{
@@ -33,7 +33,7 @@ char	*ft_check_map(t_game *game)
 			free(line_map);
 			break ;
 		}
-		map_string = ft_strjoin_gnl(map_string, line_map);
+		map_string = ft_gnl_strjoin(map_string, line_map);
 		free(line_map);
 	}
 	close(fd);
